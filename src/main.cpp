@@ -1,9 +1,9 @@
 #include <Arduino.h>
 
-const int analogInPin = A1; // Пин для датчика MQ-2
-const int ledPin = 13;      // Пин для светодиода
-int sensorValue = 0;        // Переменная для сохранения значения, поступающего с датчика
-int thresholdValue = 300;   // Пороговое значение для срабатывание датчика
+const int MQ2_pin = A10; // Пин для датчика MQ-2
+const int ledPin = 2;      // Пин для светодиода
+int MQ2_Value = 0;        // Переменная для сохранения значения, поступающего с датчика
+int threshold_MQ2_Value = 300;   // Пороговое значение для срабатывание датчика
 
 void setup()
 {
@@ -14,8 +14,8 @@ void setup()
 
 void loop()
 {
-    sensorValue = analogRead(analogInPin); // Считывание значения с датчика
-    if (sensorValue >= thresholdValue)     // При превышение порогового значения - загорается светодиод
+    MQ2_Value = analogRead(MQ2_pin); // Считывание значения с датчика
+    if (MQ2_Value >= threshold_MQ2_Value)     // При превышение порогового значения - загорается светодиод
     {
         digitalWrite(ledPin, HIGH); // Включение светодиода
     }
@@ -25,6 +25,6 @@ void loop()
     }
     // Транслирование, отслеживаемых значений, в монитор порта
     Serial.print("MQ2 value = ");
-    Serial.println(sensorValue);
+    Serial.println(MQ2_Value);
     delay(1000); // Задержка 1с
 }
