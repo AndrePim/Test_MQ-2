@@ -7,9 +7,9 @@ Test program MQ-2 sensor
 
 Components
 
-1 - Arduino Mega2560
-1 - MQ-2 sensor
-1 - LED
-1 - Resistor 220 Om
+- 1 - Arduino Mega2560
+- 1 - MQ-2 sensor
+- 1 - LED
+- 1 - Resistor 220 Om
 
 ![Wiring](https://i.ibb.co/NtNWBfD/MQ2-Arduino-Mega-2560-bb.png)
